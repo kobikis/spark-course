@@ -1,10 +1,8 @@
 package com.trainologic.spark.course.precourse;
 
-import com.trainologic.spark.course.utils.SparkUtils;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.SparkSession;
 
 import java.util.Arrays;
 import java.util.List;
