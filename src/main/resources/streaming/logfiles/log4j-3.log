@@ -1,0 +1,804 @@
+17/09/28 12:15:42 INFO DAGScheduler: ShuffleMapStage 160 (run at ThreadPoolExecutor.java:1142) failed in 60.174 s
+17/09/28 12:15:42 INFO DAGScheduler: Job 133 failed: run at ThreadPoolExecutor.java:1142, took 60.189653 s
+17/09/28 12:15:42 INFO TaskSchedulerImpl: Cancelling stage 158
+17/09/28 12:15:42 ERROR InsertIntoHadoopFsRelationCommand: Aborting job.
+org.apache.spark.SparkException: Exception thrown in awaitResult:
+	at org.apache.spark.util.ThreadUtils$.awaitResultInForkJoinSafely(ThreadUtils.scala:215)
+	at org.apache.spark.sql.execution.exchange.BroadcastExchangeExec.doExecuteBroadcast(BroadcastExchangeExec.scala:120)
+	at org.apache.spark.sql.execution.InputAdapter.doExecuteBroadcast(WholeStageCodegenExec.scala:229)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeBroadcast$1.apply(SparkPlan.scala:125)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeBroadcast$1.apply(SparkPlan.scala:125)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.executeBroadcast(SparkPlan.scala:124)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.prepareBroadcast(BroadcastHashJoinExec.scala:98)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.codegenOuter(BroadcastHashJoinExec.scala:242)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.doConsume(BroadcastHashJoinExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$class.consume(WholeStageCodegenExec.scala:153)
+	at org.apache.spark.sql.execution.ProjectExec.consume(basicPhysicalOperators.scala:36)
+	at org.apache.spark.sql.execution.ProjectExec.doConsume(basicPhysicalOperators.scala:68)
+	at org.apache.spark.sql.execution.CodegenSupport$class.consume(WholeStageCodegenExec.scala:153)
+	at org.apache.spark.sql.execution.InputAdapter.consume(WholeStageCodegenExec.scala:218)
+	at org.apache.spark.sql.execution.InputAdapter.doProduce(WholeStageCodegenExec.scala:244)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.InputAdapter.produce(WholeStageCodegenExec.scala:218)
+	at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:46)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:36)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.doProduce(BroadcastHashJoinExec.scala:77)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.produce(BroadcastHashJoinExec.scala:38)
+	at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:46)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:36)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.doProduce(BroadcastHashJoinExec.scala:77)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.produce(BroadcastHashJoinExec.scala:38)
+	at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:46)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:36)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.doProduce(BroadcastHashJoinExec.scala:77)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.produce(BroadcastHashJoinExec.scala:38)
+	at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:46)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:36)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.doProduce(BroadcastHashJoinExec.scala:77)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.produce(BroadcastHashJoinExec.scala:38)
+	at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:46)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:36)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.doProduce(BroadcastHashJoinExec.scala:77)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.produce(BroadcastHashJoinExec.scala:38)
+	at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:46)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:36)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.doProduce(BroadcastHashJoinExec.scala:77)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.produce(BroadcastHashJoinExec.scala:38)
+	at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:46)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:36)
+	at org.apache.spark.sql.execution.SortExec.doProduce(SortExec.scala:137)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:83)
+	at org.apache.spark.sql.execution.CodegenSupport$$anonfun$produce$1.apply(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.CodegenSupport$class.produce(WholeStageCodegenExec.scala:78)
+	at org.apache.spark.sql.execution.SortExec.produce(SortExec.scala:37)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.doCodeGen(WholeStageCodegenExec.scala:309)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:347)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.joins.SortMergeJoinExec.doExecute(SortMergeJoinExec.scala:100)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:233)
+	at org.apache.spark.sql.execution.ProjectExec.inputRDDs(basicPhysicalOperators.scala:42)
+	at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.inputRDDs(BroadcastHashJoinExec.scala:73)
+	at org.apache.spark.sql.execution.ProjectExec.inputRDDs(basicPhysicalOperators.scala:42)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:361)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.exchange.ShuffleExchange.prepareShuffleDependency(ShuffleExchange.scala:87)
+	at org.apache.spark.sql.execution.exchange.ShuffleExchange$$anonfun$doExecute$1.apply(ShuffleExchange.scala:123)
+	at org.apache.spark.sql.execution.exchange.ShuffleExchange$$anonfun$doExecute$1.apply(ShuffleExchange.scala:114)
+	at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:52)
+	at org.apache.spark.sql.execution.exchange.ShuffleExchange.doExecute(ShuffleExchange.scala:114)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:233)
+	at org.apache.spark.sql.execution.SortExec.inputRDDs(SortExec.scala:111)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:361)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.joins.SortMergeJoinExec.doExecute(SortMergeJoinExec.scala:100)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:233)
+	at org.apache.spark.sql.execution.ProjectExec.inputRDDs(basicPhysicalOperators.scala:42)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:361)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.CoalesceExec.doExecute(basicPhysicalOperators.scala:501)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:86)
+	at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:86)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand$$anonfun$run$1.apply$mcV$sp(InsertIntoHadoopFsRelationCommand.scala:143)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand$$anonfun$run$1.apply(InsertIntoHadoopFsRelationCommand.scala:115)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand$$anonfun$run$1.apply(InsertIntoHadoopFsRelationCommand.scala:115)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:57)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:115)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:58)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:56)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.doExecute(commands.scala:74)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)
+	at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:86)
+	at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:86)
+	at org.apache.spark.sql.execution.datasources.DataSource.write(DataSource.scala:525)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:211)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:194)
+	at org.apache.spark.sql.DataFrameWriter.json(DataFrameWriter.scala:467)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:79)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:85)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:87)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:89)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:91)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:93)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:95)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:97)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:99)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC$$iwC.<init>(<console>:101)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC$$iwC.<init>(<console>:103)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC$$iwC.<init>(<console>:105)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC$$iwC.<init>(<console>:107)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$$iwC.<init>(<console>:109)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read.<init>(<console>:111)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$.<init>(<console>:115)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$read$.<clinit>(<console>)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$eval$.<init>(<console>:7)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$eval$.<clinit>(<console>)
+	at line34e73d4d82884faab4213b1ff4a3d96458.$eval.$print(<console>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.repl.SparkIMain$ReadEvalPrint.call(SparkIMain.scala:1046)
+	at org.apache.spark.repl.SparkIMain$Request.loadAndRun(SparkIMain.scala:1322)
+	at org.apache.spark.repl.SparkIMain.loadAndRunReq$1(SparkIMain.scala:822)
+	at org.apache.spark.repl.SparkIMain.interpret(SparkIMain.scala:853)
+	at org.apache.spark.repl.SparkIMain.interpret(SparkIMain.scala:801)
+	at com.databricks.backend.daemon.driver.DriverILoop.execute(DriverILoop.scala:156)
+	at com.databricks.backend.daemon.driver.ScalaDriverLocal$$anonfun$repl$1.apply$mcV$sp(ScalaDriverLocal.scala:165)
+	at com.databricks.backend.daemon.driver.ScalaDriverLocal$$anonfun$repl$1.apply(ScalaDriverLocal.scala:165)
+	at com.databricks.backend.daemon.driver.ScalaDriverLocal$$anonfun$repl$1.apply(ScalaDriverLocal.scala:165)
+	at com.databricks.backend.daemon.driver.DriverLocal$TrapExitInternal$.trapExit(DriverLocal.scala:403)
+	at com.databricks.backend.daemon.driver.DriverLocal$TrapExit$.apply(DriverLocal.scala:357)
+	at com.databricks.backend.daemon.driver.ScalaDriverLocal.repl(ScalaDriverLocal.scala:165)
+	at com.databricks.backend.daemon.driver.DriverLocal$$anonfun$execute$1.apply(DriverLocal.scala:207)
+	at com.databricks.backend.daemon.driver.DriverLocal$$anonfun$execute$1.apply(DriverLocal.scala:196)
+	at com.databricks.logging.UsageLogging$$anonfun$withAttributionContext$1.apply(UsageLogging.scala:145)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:57)
+	at com.databricks.logging.UsageLogging$class.withAttributionContext(UsageLogging.scala:140)
+	at com.databricks.backend.daemon.driver.DriverLocal.withAttributionContext(DriverLocal.scala:35)
+	at com.databricks.logging.UsageLogging$class.withAttributionTags(UsageLogging.scala:178)
+	at com.databricks.backend.daemon.driver.DriverLocal.withAttributionTags(DriverLocal.scala:35)
+	at com.databricks.backend.daemon.driver.DriverLocal.execute(DriverLocal.scala:196)
+	at com.databricks.backend.daemon.driver.DriverWrapper$$anonfun$tryExecutingCommand$2.apply(DriverWrapper.scala:578)
+	at com.databricks.backend.daemon.driver.DriverWrapper$$anonfun$tryExecutingCommand$2.apply(DriverWrapper.scala:578)
+	at scala.util.Try$.apply(Try.scala:161)
+	at com.databricks.backend.daemon.driver.DriverWrapper.tryExecutingCommand(DriverWrapper.scala:573)
+	at com.databricks.backend.daemon.driver.DriverWrapper.executeCommand(DriverWrapper.scala:488)
+	at com.databricks.backend.daemon.driver.DriverWrapper.runInnerLoop(DriverWrapper.scala:391)
+	at com.databricks.backend.daemon.driver.DriverWrapper.runInner(DriverWrapper.scala:348)
+	at com.databricks.backend.daemon.driver.DriverWrapper.run(DriverWrapper.scala:215)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.spark.SparkException: Job 132 cancelled part of cancelled job group 6633545549637775400_5473213431367641671_7e2b19abcd484b73ab7c82699eeb38fb
+	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1454)
+	at org.apache.spark.scheduler.DAGScheduler.handleJobCancellation(DAGScheduler.scala:1393)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleJobGroupCancelled$1.apply$mcVI$sp(DAGScheduler.scala:795)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleJobGroupCancelled$1.apply(DAGScheduler.scala:795)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleJobGroupCancelled$1.apply(DAGScheduler.scala:795)
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:79)
+	at org.apache.spark.scheduler.DAGScheduler.handleJobGroupCancelled(DAGScheduler.scala:795)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1642)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1622)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1611)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:632)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1891)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1904)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1917)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1931)
+	at org.apache.spark.rdd.RDD$$anonfun$collect$1.apply(RDD.scala:912)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:358)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:911)
+	at org.apache.spark.sql.execution.SparkPlan.executeCollect(SparkPlan.scala:275)
+	at org.apache.spark.sql.execution.exchange.BroadcastExchangeExec$$anonfun$relationFuture$1$$anonfun$apply$1.apply(BroadcastExchangeExec.scala:75)
+	at org.apache.spark.sql.execution.exchange.BroadcastExchangeExec$$anonfun$relationFuture$1$$anonfun$apply$1.apply(BroadcastExchangeExec.scala:72)
+	at org.apache.spark.sql.execution.SQLExecution$.withExecutionId(SQLExecution.scala:94)
+	at org.apache.spark.sql.execution.exchange.BroadcastExchangeExec$$anonfun$relationFuture$1.apply(BroadcastExchangeExec.scala:72)
+	at org.apache.spark.sql.execution.exchange.BroadcastExchangeExec$$anonfun$relationFuture$1.apply(BroadcastExchangeExec.scala:72)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+17/09/28 12:15:42 INFO TaskSchedulerImpl: Stage 158 was cancelled
+17/09/28 12:15:42 INFO DAGScheduler: ShuffleMapStage 158 (run at ThreadPoolExecutor.java:1142) failed in 60.188 s
+17/09/28 12:15:42 INFO DAGScheduler: Job 134 failed: run at ThreadPoolExecutor.java:1142, took 60.195606 s
+17/09/28 12:15:42 ERROR DefaultWriterContainer: Job job_201709281214_0000 aborted.
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 1.0 in stage 160.0 (TID 8673, 10.103.240.64): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 27.0 in stage 160.0 (TID 8899, 10.103.240.64): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 27.0 in stage 156.0 (TID 8667, 10.103.240.64): TaskKilled (killed intentionally)
+17/09/28 12:15:42 INFO TaskSchedulerImpl: Removed TaskSet 156.0, whose tasks have all completed, from pool 6633545549637775400
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 31.0 in stage 160.0 (TID 8903, 10.103.246.11): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 21.0 in stage 160.0 (TID 8893, 10.103.255.78): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 28.0 in stage 160.0 (TID 8900, 10.103.240.64): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 10.0 in stage 160.0 (TID 8882, 10.103.255.78): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 5.0 in stage 160.0 (TID 8877, 10.103.246.11): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 23.0 in stage 160.0 (TID 8895, 10.103.246.11): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 13.0 in stage 160.0 (TID 8885, 10.103.246.11): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 19.0 in stage 160.0 (TID 8891, 10.103.255.78): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 12.0 in stage 160.0 (TID 8884, 10.103.255.78): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 25.0 in stage 160.0 (TID 8897, 10.103.255.78): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 8.0 in stage 160.0 (TID 8880, 10.103.246.11): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 29.0 in stage 160.0 (TID 8901, 10.103.255.78): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 4.0 in stage 160.0 (TID 8676, 10.103.240.64): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 7.0 in stage 160.0 (TID 8879, 10.103.240.64): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 3.0 in stage 160.0 (TID 8675, 10.103.240.64): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 18.0 in stage 160.0 (TID 8890, 10.103.255.78): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 14.0 in stage 160.0 (TID 8886, 10.103.246.11): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 15.0 in stage 160.0 (TID 8887, 10.103.246.11): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 6.0 in stage 160.0 (TID 8878, 10.103.240.64): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 26.0 in stage 160.0 (TID 8898, 10.103.246.11): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 24.0 in stage 160.0 (TID 8896, 10.103.224.254): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 11.0 in stage 160.0 (TID 8883, 10.103.224.254): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 16.0 in stage 160.0 (TID 8888, 10.103.224.254): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 22.0 in stage 160.0 (TID 8894, 10.103.224.254): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 30.0 in stage 160.0 (TID 8902, 10.103.224.254): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 9.0 in stage 160.0 (TID 8881, 10.103.224.254): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 17.0 in stage 160.0 (TID 8889, 10.103.224.254): TaskKilled (killed intentionally)
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 20.0 in stage 160.0 (TID 8892, 10.103.224.254): TaskKilled (killed intentionally)
+17/09/28 12:15:42 INFO TaskSchedulerImpl: Removed TaskSet 160.0, whose tasks have all completed, from pool 6633545549637775400
+17/09/28 12:15:42 WARN TaskSetManager: Lost task 0.0 in stage 158.0 (TID 8904, 10.103.255.78): TaskKilled (killed intentionally)
+17/09/28 12:15:42 INFO TaskSchedulerImpl: Removed TaskSet 158.0, whose tasks have all completed, from pool 6633545549637775400
+17/09/28 12:15:44 INFO SparkContext: Starting job: parquet at SparkUtils.scala:78
+17/09/28 12:15:44 INFO DAGScheduler: Got job 146 (parquet at SparkUtils.scala:78) with 10 output partitions
+17/09/28 12:15:44 INFO DAGScheduler: Final stage: ResultStage 173 (parquet at SparkUtils.scala:78)
+17/09/28 12:15:44 INFO DAGScheduler: Parents of final stage: List()
+17/09/28 12:15:44 INFO DAGScheduler: Missing parents: List()
+17/09/28 12:15:44 INFO DAGScheduler: Submitting ResultStage 173 (MapPartitionsRDD[816] at parquet at SparkUtils.scala:78), which has no missing parents
+17/09/28 12:15:44 INFO MemoryStore: Block broadcast_314 stored as values in memory (estimated size 116.1 KB, free 7.1 GB)
+17/09/28 12:15:44 INFO MemoryStore: Block broadcast_314_piece0 stored as bytes in memory (estimated size 39.4 KB, free 7.1 GB)
+17/09/28 12:15:44 INFO BlockManagerInfo: Added broadcast_314_piece0 in memory on 10.103.232.159:35748 (size: 39.4 KB, free: 10.7 GB)
+17/09/28 12:15:44 INFO SparkContext: Created broadcast 314 from broadcast at DAGScheduler.scala:1012
+17/09/28 12:15:44 INFO DAGScheduler: Submitting 10 missing tasks from ResultStage 173 (MapPartitionsRDD[816] at parquet at SparkUtils.scala:78)
+17/09/28 12:15:44 INFO TaskSchedulerImpl: Adding task set 173.0 with 10 tasks
+17/09/28 12:15:44 INFO FairSchedulableBuilder: Added task set TaskSet_173 tasks to pool 6633545549637775400
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 0.0 in stage 173.0 (TID 8905, 10.103.255.78, partition 0, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 1.0 in stage 173.0 (TID 8906, 10.103.240.64, partition 1, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 2.0 in stage 173.0 (TID 8907, 10.103.224.254, partition 2, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 3.0 in stage 173.0 (TID 8908, 10.103.246.11, partition 3, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 4.0 in stage 173.0 (TID 8909, 10.103.255.78, partition 4, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 5.0 in stage 173.0 (TID 8910, 10.103.240.64, partition 5, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 6.0 in stage 173.0 (TID 8911, 10.103.224.254, partition 6, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 7.0 in stage 173.0 (TID 8912, 10.103.246.11, partition 7, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 8.0 in stage 173.0 (TID 8913, 10.103.255.78, partition 8, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO TaskSetManager: Starting task 9.0 in stage 173.0 (TID 8914, 10.103.240.64, partition 9, PROCESS_LOCAL, 7279 bytes)
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8905 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8909 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8913 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8906 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8910 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8914 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8907 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8911 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8908 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8912 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:44 INFO BlockManagerInfo: Added broadcast_314_piece0 in memory on 10.103.240.64:33277 (size: 39.4 KB, free: 4.0 GB)
+17/09/28 12:15:44 INFO BlockManagerInfo: Added broadcast_314_piece0 in memory on 10.103.246.11:40518 (size: 39.4 KB, free: 4.0 GB)
+17/09/28 12:15:44 INFO BlockManagerInfo: Added broadcast_314_piece0 in memory on 10.103.224.254:43927 (size: 39.4 KB, free: 4.0 GB)
+17/09/28 12:15:44 INFO BlockManagerInfo: Added broadcast_314_piece0 in memory on 10.103.255.78:43946 (size: 39.4 KB, free: 4.0 GB)
+17/09/28 12:15:44 INFO TaskSetManager: Finished task 8.0 in stage 173.0 (TID 8913) in 80 ms on 10.103.255.78 (1/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 7.0 in stage 173.0 (TID 8912) in 85 ms on 10.103.246.11 (2/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 0.0 in stage 173.0 (TID 8905) in 92 ms on 10.103.255.78 (3/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 5.0 in stage 173.0 (TID 8910) in 97 ms on 10.103.240.64 (4/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 3.0 in stage 173.0 (TID 8908) in 98 ms on 10.103.246.11 (5/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 9.0 in stage 173.0 (TID 8914) in 145 ms on 10.103.240.64 (6/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 4.0 in stage 173.0 (TID 8909) in 162 ms on 10.103.255.78 (7/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 2.0 in stage 173.0 (TID 8907) in 182 ms on 10.103.224.254 (8/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 1.0 in stage 173.0 (TID 8906) in 213 ms on 10.103.240.64 (9/10)
+17/09/28 12:15:45 INFO TaskSetManager: Finished task 6.0 in stage 173.0 (TID 8911) in 401 ms on 10.103.224.254 (10/10)
+17/09/28 12:15:45 INFO DAGScheduler: ResultStage 173 (parquet at SparkUtils.scala:78) finished in 0.403 s
+17/09/28 12:15:45 INFO TaskSchedulerImpl: Removed TaskSet 173.0, whose tasks have all completed, from pool 6633545549637775400
+17/09/28 12:15:45 INFO DAGScheduler: Job 146 finished: parquet at SparkUtils.scala:78, took 0.414217 s
+17/09/28 12:15:45 INFO SparkSqlParser: Parsing command: sid_table_819
+17/09/28 12:15:45 INFO SparkSqlParser: Parsing command: sid_table_819
+17/09/28 12:15:45 WARN CacheManager: Asked to cache already cached data.
+17/09/28 12:15:45 INFO DAGScheduler: Got job 147 (parquet at SparkUtils.scala:78) with 48 output partitions
+17/09/28 12:15:45 INFO DAGScheduler: Final stage: ResultStage 174 (parquet at SparkUtils.scala:78)
+17/09/28 12:15:45 INFO DAGScheduler: Parents of final stage: List()
+17/09/28 12:15:45 INFO DAGScheduler: Missing parents: List()
+17/09/28 12:15:45 INFO DAGScheduler: Submitting ResultStage 174 (MapPartitionsRDD[823] at parquet at SparkUtils.scala:78), which has no missing parents
+17/09/28 12:15:45 INFO MemoryStore: Block broadcast_315 stored as values in memory (estimated size 116.5 KB, free 7.1 GB)
+17/09/28 12:15:45 INFO MemoryStore: Block broadcast_315_piece0 stored as bytes in memory (estimated size 39.6 KB, free 7.1 GB)
+17/09/28 12:15:45 INFO BlockManagerInfo: Added broadcast_315_piece0 in memory on 10.103.232.159:35748 (size: 39.6 KB, free: 10.7 GB)
+17/09/28 12:15:45 INFO SparkContext: Created broadcast 315 from broadcast at DAGScheduler.scala:1012
+17/09/28 12:15:45 INFO DAGScheduler: Submitting 48 missing tasks from ResultStage 174 (MapPartitionsRDD[823] at parquet at SparkUtils.scala:78)
+17/09/28 12:15:45 INFO TaskSchedulerImpl: Adding task set 174.0 with 48 tasks
+17/09/28 12:15:45 INFO FairSchedulableBuilder: Added task set TaskSet_174 tasks to pool 6633545549637775400
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 0.0 in stage 174.0 (TID 8915, 10.103.255.78, partition 0, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 1.0 in stage 174.0 (TID 8916, 10.103.240.64, partition 1, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 2.0 in stage 174.0 (TID 8917, 10.103.246.11, partition 2, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 3.0 in stage 174.0 (TID 8918, 10.103.224.254, partition 3, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 4.0 in stage 174.0 (TID 8919, 10.103.255.78, partition 4, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 5.0 in stage 174.0 (TID 8920, 10.103.240.64, partition 5, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 6.0 in stage 174.0 (TID 8921, 10.103.246.11, partition 6, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 7.0 in stage 174.0 (TID 8922, 10.103.224.254, partition 7, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 8.0 in stage 174.0 (TID 8923, 10.103.255.78, partition 8, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 9.0 in stage 174.0 (TID 8924, 10.103.240.64, partition 9, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 10.0 in stage 174.0 (TID 8925, 10.103.246.11, partition 10, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 11.0 in stage 174.0 (TID 8926, 10.103.224.254, partition 11, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 12.0 in stage 174.0 (TID 8927, 10.103.255.78, partition 12, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 13.0 in stage 174.0 (TID 8928, 10.103.240.64, partition 13, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 14.0 in stage 174.0 (TID 8929, 10.103.246.11, partition 14, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 15.0 in stage 174.0 (TID 8930, 10.103.224.254, partition 15, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 16.0 in stage 174.0 (TID 8931, 10.103.255.78, partition 16, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 17.0 in stage 174.0 (TID 8932, 10.103.240.64, partition 17, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 18.0 in stage 174.0 (TID 8933, 10.103.246.11, partition 18, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 19.0 in stage 174.0 (TID 8934, 10.103.224.254, partition 19, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 20.0 in stage 174.0 (TID 8935, 10.103.255.78, partition 20, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 21.0 in stage 174.0 (TID 8936, 10.103.240.64, partition 21, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 22.0 in stage 174.0 (TID 8937, 10.103.246.11, partition 22, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 23.0 in stage 174.0 (TID 8938, 10.103.224.254, partition 23, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 24.0 in stage 174.0 (TID 8939, 10.103.255.78, partition 24, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 25.0 in stage 174.0 (TID 8940, 10.103.240.64, partition 25, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 26.0 in stage 174.0 (TID 8941, 10.103.246.11, partition 26, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 27.0 in stage 174.0 (TID 8942, 10.103.224.254, partition 27, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 28.0 in stage 174.0 (TID 8943, 10.103.255.78, partition 28, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 29.0 in stage 174.0 (TID 8944, 10.103.240.64, partition 29, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 30.0 in stage 174.0 (TID 8945, 10.103.246.11, partition 30, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO TaskSetManager: Starting task 31.0 in stage 174.0 (TID 8946, 10.103.224.254, partition 31, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8915 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8919 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8923 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8927 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8931 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8935 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8939 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8943 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8916 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8920 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8924 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8928 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8932 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8936 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8940 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8944 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8917 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8921 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8925 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8929 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8933 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8937 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8941 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8945 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8918 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8922 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8926 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8930 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8934 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8938 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8942 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:45 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8946 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:45 INFO BlockManagerInfo: Added broadcast_315_piece0 in memory on 10.103.240.64:33277 (size: 39.6 KB, free: 4.0 GB)
+17/09/28 12:15:45 INFO BlockManagerInfo: Added broadcast_315_piece0 in memory on 10.103.255.78:43946 (size: 39.6 KB, free: 4.0 GB)
+17/09/28 12:15:46 INFO BlockManagerInfo: Added broadcast_315_piece0 in memory on 10.103.246.11:40518 (size: 39.6 KB, free: 4.0 GB)
+17/09/28 12:15:46 INFO BlockManagerInfo: Added broadcast_315_piece0 in memory on 10.103.224.254:43927 (size: 39.6 KB, free: 4.0 GB)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 32.0 in stage 174.0 (TID 8947, 10.103.246.11, partition 32, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8947 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 18.0 in stage 174.0 (TID 8933) in 118 ms on 10.103.246.11 (1/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 33.0 in stage 174.0 (TID 8948, 10.103.246.11, partition 33, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8948 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 26.0 in stage 174.0 (TID 8941) in 128 ms on 10.103.246.11 (2/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 34.0 in stage 174.0 (TID 8949, 10.103.255.78, partition 34, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8949 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 24.0 in stage 174.0 (TID 8939) in 142 ms on 10.103.255.78 (3/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 35.0 in stage 174.0 (TID 8950, 10.103.246.11, partition 35, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8950 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 36.0 in stage 174.0 (TID 8951, 10.103.240.64, partition 36, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8951 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 37.0 in stage 174.0 (TID 8952, 10.103.240.64, partition 37, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8952 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 38.0 in stage 174.0 (TID 8953, 10.103.255.78, partition 38, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8953 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 39.0 in stage 174.0 (TID 8954, 10.103.255.78, partition 39, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8954 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 14.0 in stage 174.0 (TID 8929) in 148 ms on 10.103.246.11 (4/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 5.0 in stage 174.0 (TID 8920) in 150 ms on 10.103.240.64 (5/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 25.0 in stage 174.0 (TID 8940) in 146 ms on 10.103.240.64 (6/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 4.0 in stage 174.0 (TID 8919) in 151 ms on 10.103.255.78 (7/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 12.0 in stage 174.0 (TID 8927) in 149 ms on 10.103.255.78 (8/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 40.0 in stage 174.0 (TID 8955, 10.103.224.254, partition 40, PROCESS_LOCAL, 7094 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8955 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 31.0 in stage 174.0 (TID 8946) in 146 ms on 10.103.224.254 (9/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 41.0 in stage 174.0 (TID 8956, 10.103.246.11, partition 41, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8956 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 30.0 in stage 174.0 (TID 8945) in 148 ms on 10.103.246.11 (10/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 42.0 in stage 174.0 (TID 8957, 10.103.246.11, partition 42, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8957 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 10.0 in stage 174.0 (TID 8925) in 153 ms on 10.103.246.11 (11/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 43.0 in stage 174.0 (TID 8958, 10.103.240.64, partition 43, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8958 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 1.0 in stage 174.0 (TID 8916) in 156 ms on 10.103.240.64 (12/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 44.0 in stage 174.0 (TID 8959, 10.103.246.11, partition 44, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8959 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 45.0 in stage 174.0 (TID 8960, 10.103.255.78, partition 45, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8960 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 22.0 in stage 174.0 (TID 8937) in 155 ms on 10.103.246.11 (13/48)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 46.0 in stage 174.0 (TID 8961, 10.103.224.254, partition 46, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8961 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 47.0 in stage 174.0 (TID 8962, 10.103.224.254, partition 47, PROCESS_LOCAL, 7093 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8962 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 28.0 in stage 174.0 (TID 8943) in 154 ms on 10.103.255.78 (14/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 29.0 in stage 174.0 (TID 8944) in 155 ms on 10.103.240.64 (15/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 27.0 in stage 174.0 (TID 8942) in 155 ms on 10.103.224.254 (16/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 11.0 in stage 174.0 (TID 8926) in 159 ms on 10.103.224.254 (17/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 7.0 in stage 174.0 (TID 8922) in 161 ms on 10.103.224.254 (18/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 20.0 in stage 174.0 (TID 8935) in 162 ms on 10.103.255.78 (19/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 6.0 in stage 174.0 (TID 8921) in 166 ms on 10.103.246.11 (20/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 9.0 in stage 174.0 (TID 8924) in 173 ms on 10.103.240.64 (21/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 23.0 in stage 174.0 (TID 8938) in 171 ms on 10.103.224.254 (22/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 8.0 in stage 174.0 (TID 8923) in 175 ms on 10.103.255.78 (23/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 0.0 in stage 174.0 (TID 8915) in 178 ms on 10.103.255.78 (24/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 3.0 in stage 174.0 (TID 8918) in 180 ms on 10.103.224.254 (25/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 21.0 in stage 174.0 (TID 8936) in 186 ms on 10.103.240.64 (26/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 2.0 in stage 174.0 (TID 8917) in 215 ms on 10.103.246.11 (27/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 15.0 in stage 174.0 (TID 8930) in 212 ms on 10.103.224.254 (28/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 16.0 in stage 174.0 (TID 8931) in 220 ms on 10.103.255.78 (29/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 35.0 in stage 174.0 (TID 8950) in 116 ms on 10.103.246.11 (30/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 38.0 in stage 174.0 (TID 8953) in 117 ms on 10.103.255.78 (31/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 33.0 in stage 174.0 (TID 8948) in 135 ms on 10.103.246.11 (32/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 34.0 in stage 174.0 (TID 8949) in 122 ms on 10.103.255.78 (33/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 32.0 in stage 174.0 (TID 8947) in 150 ms on 10.103.246.11 (34/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 40.0 in stage 174.0 (TID 8955) in 129 ms on 10.103.224.254 (35/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 47.0 in stage 174.0 (TID 8962) in 122 ms on 10.103.224.254 (36/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 17.0 in stage 174.0 (TID 8932) in 281 ms on 10.103.240.64 (37/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 37.0 in stage 174.0 (TID 8952) in 136 ms on 10.103.240.64 (38/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 46.0 in stage 174.0 (TID 8961) in 125 ms on 10.103.224.254 (39/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 13.0 in stage 174.0 (TID 8928) in 291 ms on 10.103.240.64 (40/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 45.0 in stage 174.0 (TID 8960) in 143 ms on 10.103.255.78 (41/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 39.0 in stage 174.0 (TID 8954) in 151 ms on 10.103.255.78 (42/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 44.0 in stage 174.0 (TID 8959) in 159 ms on 10.103.246.11 (43/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 36.0 in stage 174.0 (TID 8951) in 179 ms on 10.103.240.64 (44/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 43.0 in stage 174.0 (TID 8958) in 172 ms on 10.103.240.64 (45/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 41.0 in stage 174.0 (TID 8956) in 176 ms on 10.103.246.11 (46/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 42.0 in stage 174.0 (TID 8957) in 199 ms on 10.103.246.11 (47/48)
+17/09/28 12:15:46 INFO TaskSetManager: Finished task 19.0 in stage 174.0 (TID 8934) in 900 ms on 10.103.224.254 (48/48)
+17/09/28 12:15:46 INFO DAGScheduler: ResultStage 174 (parquet at SparkUtils.scala:78) finished in 0.906 s
+17/09/28 12:15:46 INFO TaskSchedulerImpl: Removed TaskSet 174.0, whose tasks have all completed, from pool 6633545549637775400
+17/09/28 12:15:46 INFO DAGScheduler: Job 147 finished: parquet at SparkUtils.scala:78, took 0.920830 s
+17/09/28 12:15:46 INFO SparkContext: Starting job: parquet at SparkUtils.scala:78
+17/09/28 12:15:46 INFO DAGScheduler: Got job 148 (parquet at SparkUtils.scala:78) with 32 output partitions
+17/09/28 12:15:46 INFO DAGScheduler: Final stage: ResultStage 175 (parquet at SparkUtils.scala:78)
+17/09/28 12:15:46 INFO DAGScheduler: Parents of final stage: List()
+17/09/28 12:15:46 INFO DAGScheduler: Missing parents: List()
+17/09/28 12:15:46 INFO DAGScheduler: Submitting ResultStage 175 (MapPartitionsRDD[825] at parquet at SparkUtils.scala:78), which has no missing parents
+17/09/28 12:15:46 INFO MemoryStore: Block broadcast_316 stored as values in memory (estimated size 116.1 KB, free 7.1 GB)
+17/09/28 12:15:46 INFO MemoryStore: Block broadcast_316_piece0 stored as bytes in memory (estimated size 39.4 KB, free 7.1 GB)
+17/09/28 12:15:46 INFO BlockManagerInfo: Added broadcast_316_piece0 in memory on 10.103.232.159:35748 (size: 39.4 KB, free: 10.7 GB)
+17/09/28 12:15:46 INFO SparkContext: Created broadcast 316 from broadcast at DAGScheduler.scala:1012
+17/09/28 12:15:46 INFO DAGScheduler: Submitting 32 missing tasks from ResultStage 175 (MapPartitionsRDD[825] at parquet at SparkUtils.scala:78)
+17/09/28 12:15:46 INFO TaskSchedulerImpl: Adding task set 175.0 with 32 tasks
+17/09/28 12:15:46 INFO FairSchedulableBuilder: Added task set TaskSet_175 tasks to pool 6633545549637775400
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 0.0 in stage 175.0 (TID 8963, 10.103.240.64, partition 0, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 1.0 in stage 175.0 (TID 8964, 10.103.246.11, partition 1, PROCESS_LOCAL, 9615 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 2.0 in stage 175.0 (TID 8965, 10.103.255.78, partition 2, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 3.0 in stage 175.0 (TID 8966, 10.103.224.254, partition 3, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 4.0 in stage 175.0 (TID 8967, 10.103.240.64, partition 4, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 5.0 in stage 175.0 (TID 8968, 10.103.246.11, partition 5, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 6.0 in stage 175.0 (TID 8969, 10.103.255.78, partition 6, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 7.0 in stage 175.0 (TID 8970, 10.103.224.254, partition 7, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 8.0 in stage 175.0 (TID 8971, 10.103.240.64, partition 8, PROCESS_LOCAL, 9610 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 9.0 in stage 175.0 (TID 8972, 10.103.246.11, partition 9, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 10.0 in stage 175.0 (TID 8973, 10.103.255.78, partition 10, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 11.0 in stage 175.0 (TID 8974, 10.103.224.254, partition 11, PROCESS_LOCAL, 9610 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 12.0 in stage 175.0 (TID 8975, 10.103.240.64, partition 12, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 13.0 in stage 175.0 (TID 8976, 10.103.246.11, partition 13, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 14.0 in stage 175.0 (TID 8977, 10.103.255.78, partition 14, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 15.0 in stage 175.0 (TID 8978, 10.103.224.254, partition 15, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 16.0 in stage 175.0 (TID 8979, 10.103.240.64, partition 16, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 17.0 in stage 175.0 (TID 8980, 10.103.246.11, partition 17, PROCESS_LOCAL, 9615 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 18.0 in stage 175.0 (TID 8981, 10.103.255.78, partition 18, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 19.0 in stage 175.0 (TID 8982, 10.103.224.254, partition 19, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 20.0 in stage 175.0 (TID 8983, 10.103.240.64, partition 20, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 21.0 in stage 175.0 (TID 8984, 10.103.246.11, partition 21, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 22.0 in stage 175.0 (TID 8985, 10.103.255.78, partition 22, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 23.0 in stage 175.0 (TID 8986, 10.103.224.254, partition 23, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 24.0 in stage 175.0 (TID 8987, 10.103.240.64, partition 24, PROCESS_LOCAL, 9610 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 25.0 in stage 175.0 (TID 8988, 10.103.246.11, partition 25, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 26.0 in stage 175.0 (TID 8989, 10.103.255.78, partition 26, PROCESS_LOCAL, 9620 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 27.0 in stage 175.0 (TID 8990, 10.103.224.254, partition 27, PROCESS_LOCAL, 9610 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 28.0 in stage 175.0 (TID 8991, 10.103.240.64, partition 28, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 29.0 in stage 175.0 (TID 8992, 10.103.246.11, partition 29, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 30.0 in stage 175.0 (TID 8993, 10.103.255.78, partition 30, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO TaskSetManager: Starting task 31.0 in stage 175.0 (TID 8994, 10.103.224.254, partition 31, PROCESS_LOCAL, 9605 bytes)
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8963 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8967 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8971 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8975 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8979 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8983 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8987 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8991 on executor id: 0 hostname: 10.103.240.64.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8964 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8968 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8972 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8976 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8980 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8984 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8988 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8992 on executor id: 1 hostname: 10.103.246.11.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8965 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8969 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8973 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8977 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8981 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8985 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8989 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8993 on executor id: 2 hostname: 10.103.255.78.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8966 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8970 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8974 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8978 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8982 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8986 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8990 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8994 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:46 INFO BlockManagerInfo: Added broadcast_316_piece0 in memory on 10.103.246.11:40518 (size: 39.4 KB, free: 4.0 GB)
+17/09/28 12:15:46 INFO BlockManagerInfo: Added broadcast_316_piece0 in memory on 10.103.240.64:33277 (size: 39.4 KB, free: 4.0 GB)
+17/09/28 12:15:46 INFO BlockManagerInfo: Added broadcast_316_piece0 in memory on 10.103.224.254:43927 (size: 39.4 KB, free: 4.0 GB)
+17/09/28 12:15:47 INFO BlockManagerInfo: Added broadcast_316_piece0 in memory on 10.103.255.78:43946 (size: 39.4 KB, free: 4.0 GB)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 1.0 in stage 175.0 (TID 8964) in 714 ms on 10.103.246.11 (1/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 17.0 in stage 175.0 (TID 8980) in 713 ms on 10.103.246.11 (2/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 8.0 in stage 175.0 (TID 8971) in 737 ms on 10.103.240.64 (3/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 7.0 in stage 175.0 (TID 8970) in 760 ms on 10.103.224.254 (4/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 27.0 in stage 175.0 (TID 8990) in 756 ms on 10.103.224.254 (5/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 18.0 in stage 175.0 (TID 8981) in 763 ms on 10.103.255.78 (6/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 30.0 in stage 175.0 (TID 8993) in 765 ms on 10.103.255.78 (7/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 26.0 in stage 175.0 (TID 8989) in 767 ms on 10.103.255.78 (8/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 22.0 in stage 175.0 (TID 8985) in 769 ms on 10.103.255.78 (9/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 6.0 in stage 175.0 (TID 8969) in 780 ms on 10.103.255.78 (10/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 3.0 in stage 175.0 (TID 8966) in 787 ms on 10.103.224.254 (11/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 19.0 in stage 175.0 (TID 8982) in 806 ms on 10.103.224.254 (12/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 25.0 in stage 175.0 (TID 8988) in 807 ms on 10.103.246.11 (13/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 11.0 in stage 175.0 (TID 8974) in 814 ms on 10.103.224.254 (14/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 10.0 in stage 175.0 (TID 8973) in 815 ms on 10.103.255.78 (15/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 21.0 in stage 175.0 (TID 8984) in 814 ms on 10.103.246.11 (16/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 29.0 in stage 175.0 (TID 8992) in 824 ms on 10.103.246.11 (17/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 9.0 in stage 175.0 (TID 8972) in 844 ms on 10.103.246.11 (18/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 31.0 in stage 175.0 (TID 8994) in 845 ms on 10.103.224.254 (19/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 14.0 in stage 175.0 (TID 8977) in 852 ms on 10.103.255.78 (20/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 15.0 in stage 175.0 (TID 8978) in 912 ms on 10.103.224.254 (21/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 5.0 in stage 175.0 (TID 8968) in 929 ms on 10.103.246.11 (22/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 2.0 in stage 175.0 (TID 8965) in 945 ms on 10.103.255.78 (23/32)
+17/09/28 12:15:47 INFO TaskSetManager: Finished task 13.0 in stage 175.0 (TID 8976) in 971 ms on 10.103.246.11 (24/32)
+17/09/28 12:15:48 INFO TaskSetManager: Finished task 23.0 in stage 175.0 (TID 8986) in 1142 ms on 10.103.224.254 (25/32)
+17/09/28 12:15:48 INFO TaskSetManager: Finished task 16.0 in stage 175.0 (TID 8979) in 1724 ms on 10.103.240.64 (26/32)
+17/09/28 12:15:48 INFO TaskSetManager: Finished task 0.0 in stage 175.0 (TID 8963) in 1736 ms on 10.103.240.64 (27/32)
+17/09/28 12:15:48 INFO TaskSetManager: Finished task 20.0 in stage 175.0 (TID 8983) in 1734 ms on 10.103.240.64 (28/32)
+17/09/28 12:15:48 INFO TaskSetManager: Finished task 24.0 in stage 175.0 (TID 8987) in 1750 ms on 10.103.240.64 (29/32)
+17/09/28 12:15:48 INFO TaskSetManager: Finished task 28.0 in stage 175.0 (TID 8991) in 1752 ms on 10.103.240.64 (30/32)
+17/09/28 12:15:48 INFO TaskSetManager: Finished task 4.0 in stage 175.0 (TID 8967) in 1763 ms on 10.103.240.64 (31/32)
+17/09/28 12:15:48 INFO TaskSetManager: Finished task 12.0 in stage 175.0 (TID 8975) in 1769 ms on 10.103.240.64 (32/32)
+17/09/28 12:15:48 INFO DAGScheduler: ResultStage 175 (parquet at SparkUtils.scala:78) finished in 1.772 s
+17/09/28 12:15:48 INFO TaskSchedulerImpl: Removed TaskSet 175.0, whose tasks have all completed, from pool 6633545549637775400
+17/09/28 12:15:48 INFO DAGScheduler: Job 148 finished: parquet at SparkUtils.scala:78, took 1.783001 s
+17/09/28 12:15:48 INFO FileSourceStrategy: Pruning directories with:
+17/09/28 12:15:48 INFO FileSourceStrategy: Post-Scan Filters:
+17/09/28 12:15:48 INFO FileSourceStrategy: Pruned Data Schema: struct<event_id: string, ts: bigint, session_id: string, user_id: string, platform_user_id: string ... 40 more fields>
+17/09/28 12:15:48 INFO FileSourceStrategy: Pushed Filters:
+17/09/28 12:15:48 INFO MemoryStore: Block broadcast_317 stored as values in memory (estimated size 395.2 KB, free 7.1 GB)
+17/09/28 12:15:48 INFO MemoryStore: Block broadcast_317_piece0 stored as bytes in memory (estimated size 39.4 KB, free 7.1 GB)
+17/09/28 12:15:48 INFO BlockManagerInfo: Added broadcast_317_piece0 in memory on 10.103.232.159:35748 (size: 39.4 KB, free: 10.7 GB)
+17/09/28 12:15:48 INFO SparkContext: Created broadcast 317 from rdd at SparkUtils.scala:23
+17/09/28 12:15:48 INFO FileSourceStrategy: Planning scan with bin packing, max size: 64993835 bytes, open cost is considered as scanning 4194304 bytes.
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: event_table_829
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command:
+select *
+from event_table_829
+where
+session_id in (
+ select * from sid_table_819
+)
+
+17/09/28 12:15:48 WARN EventMethodsLTS$:
+start_session missing fileds:
+
+Add to the dataframe!!!!
+
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: session_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: ts
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: user_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: platform_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: balance
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: level
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: xp
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: vip_level
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: gender
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: age
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: country_code
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: country_tier
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: session_count
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: purchase_count
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: purchase_amount
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: first_play_ts
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: install_ts
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: device_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: os
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: model
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: ip
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: retention_organic_source
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: retention_campaign_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: retention_campaign_source
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: retention_ad_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: retention_ad_creative_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: version
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: browser_major_version
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: browser_minor_version
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: browser_type
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: regular_slots_available
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: featured_slots_available
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: new_slots_available
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: lucky_time_slot_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: fb_game_friends
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: platform_user_id
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: first_deposit_ts
+17/09/28 12:15:48 INFO SparkSqlParser: Parsing command: payer
+17/09/28 12:15:49 INFO DAGScheduler: Got job 149 (parquet at SparkUtils.scala:78) with 48 output partitions
+17/09/28 12:15:49 INFO DAGScheduler: Final stage: ResultStage 176 (parquet at SparkUtils.scala:78)
+17/09/28 12:15:49 INFO DAGScheduler: Parents of final stage: List()
+17/09/28 12:15:49 INFO DAGScheduler: Missing parents: List()
+17/09/28 12:15:49 INFO DAGScheduler: Submitting ResultStage 176 (MapPartitionsRDD[833] at parquet at SparkUtils.scala:78), which has no missing parents
+17/09/28 12:15:49 INFO MemoryStore: Block broadcast_318 stored as values in memory (estimated size 116.5 KB, free 7.1 GB)
+17/09/28 12:15:49 INFO MemoryStore: Block broadcast_318_piece0 stored as bytes in memory (estimated size 39.6 KB, free 7.1 GB)
+17/09/28 12:15:49 INFO BlockManagerInfo: Added broadcast_318_piece0 in memory on 10.103.232.159:35748 (size: 39.6 KB, free: 10.7 GB)
+17/09/28 12:15:49 INFO SparkContext: Created broadcast 318 from broadcast at DAGScheduler.scala:1012
+17/09/28 12:15:49 INFO DAGScheduler: Submitting 48 missing tasks from ResultStage 176 (MapPartitionsRDD[833] at parquet at SparkUtils.scala:78)
+17/09/28 12:15:49 INFO TaskSchedulerImpl: Adding task set 176.0 with 48 tasks
+17/09/28 12:15:49 INFO FairSchedulableBuilder: Added task set TaskSet_176 tasks to pool 6633545549637775400
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 0.0 in stage 176.0 (TID 8995, 10.103.224.254, partition 0, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 1.0 in stage 176.0 (TID 8996, 10.103.255.78, partition 1, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 2.0 in stage 176.0 (TID 8997, 10.103.240.64, partition 2, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 3.0 in stage 176.0 (TID 8998, 10.103.246.11, partition 3, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 4.0 in stage 176.0 (TID 8999, 10.103.224.254, partition 4, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 5.0 in stage 176.0 (TID 9000, 10.103.255.78, partition 5, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 6.0 in stage 176.0 (TID 9001, 10.103.240.64, partition 6, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 7.0 in stage 176.0 (TID 9002, 10.103.246.11, partition 7, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 8.0 in stage 176.0 (TID 9003, 10.103.224.254, partition 8, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 9.0 in stage 176.0 (TID 9004, 10.103.255.78, partition 9, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 10.0 in stage 176.0 (TID 9005, 10.103.240.64, partition 10, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 11.0 in stage 176.0 (TID 9006, 10.103.246.11, partition 11, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 12.0 in stage 176.0 (TID 9007, 10.103.224.254, partition 12, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 13.0 in stage 176.0 (TID 9008, 10.103.255.78, partition 13, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 14.0 in stage 176.0 (TID 9009, 10.103.240.64, partition 14, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 15.0 in stage 176.0 (TID 9010, 10.103.246.11, partition 15, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 16.0 in stage 176.0 (TID 9011, 10.103.224.254, partition 16, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 17.0 in stage 176.0 (TID 9012, 10.103.255.78, partition 17, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 18.0 in stage 176.0 (TID 9013, 10.103.240.64, partition 18, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 19.0 in stage 176.0 (TID 9014, 10.103.246.11, partition 19, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 20.0 in stage 176.0 (TID 9015, 10.103.224.254, partition 20, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 21.0 in stage 176.0 (TID 9016, 10.103.255.78, partition 21, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 22.0 in stage 176.0 (TID 9017, 10.103.240.64, partition 22, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 23.0 in stage 176.0 (TID 9018, 10.103.246.11, partition 23, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 24.0 in stage 176.0 (TID 9019, 10.103.224.254, partition 24, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 25.0 in stage 176.0 (TID 9020, 10.103.255.78, partition 25, PROCESS_LOCAL, 7084 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 26.0 in stage 176.0 (TID 9021, 10.103.240.64, partition 26, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 27.0 in stage 176.0 (TID 9022, 10.103.246.11, partition 27, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 28.0 in stage 176.0 (TID 9023, 10.103.224.254, partition 28, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 29.0 in stage 176.0 (TID 9024, 10.103.255.78, partition 29, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 30.0 in stage 176.0 (TID 9025, 10.103.240.64, partition 30, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO TaskSetManager: Starting task 31.0 in stage 176.0 (TID 9026, 10.103.246.11, partition 31, PROCESS_LOCAL, 7085 bytes)
+17/09/28 12:15:49 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8995 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:49 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 8999 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:49 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 9003 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:49 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 9007 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:49 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 9011 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:49 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 9015 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:49 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 9019 on executor id: 3 hostname: 10.103.224.254.
+17/09/28 12:15:49 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Launching task 9023 on executor id: 3 hostname: 10.103.224.254.
